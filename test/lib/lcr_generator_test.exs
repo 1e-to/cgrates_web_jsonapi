@@ -77,10 +77,10 @@ defmodule CgratesWebJsonapi.LcrGeneratorTest do
 
     assert Repo.get_by(TpLcrRule, lcr_params |> Map.merge(%{destination_id: "*any"}))
     assert Repo.get_by(TpLcrRule, lcr_params |> Map.merge(%{
-      destination_id: "b", weight: "100",rp_category: "default_lcr_#{a}"
+      destination_id: "b", weight: "100",rp_category: "LCR_FOR_a"
     }))
     assert Repo.get_by(TpRatingProfile, %{subject: "mts", category: "default_lcr", rating_plan_tag: "mts"})
-    assert Repo.get_by(TpRatingProfile, %{subject: "mts", category: "default_lcr_#{a}", rating_plan_tag: "mts"})
+    assert Repo.get_by(TpRatingProfile, %{subject: "mts", category: "lcr_for_a", rating_plan_tag: "mts"})
     assert Repo.get_by(TpRatingProfile, %{subject: "yota", category: "default_lcr", rating_plan_tag: "yota"})
   end
 end
