@@ -31,6 +31,7 @@ defmodule CgratesWebJsonapi.Router do
     resources "/add-balance",               AddBalanceController,            only:   [:create]
     resources "/cdrs",                      CdrController,                   only:   [:index, :show]
     resources "/destinations",              DestinationController,           except: [:new, :edit]
+    resources "/realtime/cgrates_lcrs",     LcrCheckController,              only:   [:create]
     resources "/load-tariff-plan",          LoadTariffPlanController,        only:   [:create]
     get "/raw-supplier-rates/export-to-csv", RawSupplierRateController,      :export_to_csv
     resources "/raw-supplier-rates",        RawSupplierRateController,       except: [:new, :edit]
